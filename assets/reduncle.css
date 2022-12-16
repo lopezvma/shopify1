@@ -1,3 +1,9 @@
 a {
     color: red!important;
 }
+
+/*li {
+    animation: animateMenuOpen var(--duration-default) ease;
+    animation-fill-mode: forwards;
+    z-index: 1;    
+}*/
