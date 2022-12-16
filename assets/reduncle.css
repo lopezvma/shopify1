@@ -5,6 +5,7 @@ a {
 
 
 li header-menu .header__submenu {
+    min-width: auto;
     opacity: 0;
     transform: translateY(-1.5rem);
 }
