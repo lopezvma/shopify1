@@ -136,17 +136,17 @@
           <div id="menu-drawer" class="gradient menu-drawer motion-reduce" tabindex="-1">
             <div class="menu-drawer__inner-container">
               <div class="menu-drawer__navigation-container">
-                <nav class="menu-drawer__navigation issa1">
+                <nav class="menu-drawer__navigation">
                   <ul class="menu-drawer__menu has-submenu list-menu" role="list">
                     {%- for link in section.settings.menu.links -%}
                       <li>
                         {%- if link.links != blank -%}
-                          <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
-                            <summary class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
+                          <div id="Details-menu-drawer-menu-item-{{ forloop.index }}">
+                            <div class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
                               {{ link.title | escape }}
                               {% render 'icon-arrow' %}
                               {% render 'icon-caret' %}
-                            </summary>
+                            </div>
                             <div id="link-{{ link.handle | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce" tabindex="-1">
                               <div class="menu-drawer__inner-submenu">
                                 <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
@@ -189,7 +189,7 @@
                                 </ul>
                               </div>
                             </div>
-                          </details>
+                          </div>
                         {%- else -%}
                           <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
                             {{ link.title | escape }}
@@ -401,11 +401,11 @@
               <li>
                 {%- if link.links != blank -%}
                   <header-menu>
-                    <details id="Details-HeaderMenu-{{ forloop.index }}">
-                      <summary class="header__menu-item list-menu__item link focus-inset">
+                    <div id="Details-HeaderMenu-{{ forloop.index }}">
+                      <div class="header__menu-item list-menu__item link focus-inset">
                         <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                         {% render 'icon-caret' %}
-                      </summary>
+                      </div>
                       <ul id="HeaderMenu-MenuList-{{ forloop.index }}" class="header__submenu list-menu list-menu--disclosure gradient caption-large motion-reduce global-settings-popup" role="list" tabindex="-1">
                         {%- for childlink in link.links -%}
                           <li>
@@ -433,7 +433,7 @@
                           </li>
                         {%- endfor -%}
                       </ul>
-                    </details>
+                    </div>
                   </header-menu>
                 {%- else -%}
                   <a href="{{ link.url }}" class="header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
