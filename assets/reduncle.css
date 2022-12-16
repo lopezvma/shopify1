@@ -2,8 +2,12 @@ a {
     color: red!important;
 }
 
-/*li {
-    animation: animateMenuOpen var(--duration-default) ease;
-    animation-fill-mode: forwards;
-    z-index: 1;    
-}*/
+
+
+li header-menu .header__submenu {
+    opacity: 0;
+    transform: translateY(-1.5rem);
+}
+li header-menu:hover .header__submenu {
+    opacity: 1;
+}
